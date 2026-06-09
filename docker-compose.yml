@@ -1,0 +1,39 @@
+version: "3.9"
+
+# Local development stack.
+# Run with: docker compose up
+# This gives you a local Qdrant instance so you don't need Qdrant Cloud during development.
+
+services:
+  # ── Qdrant vector database ──────────────────────────────────────────────────
+  qdrant:
+    image: qdrant/qdrant:v1.9.4
+    ports:
+      - "6333:6333"    # REST API (used by qdrant-client)
+      - "6334:6334"    # gRPC (optional, not used here)
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+
+  # ── FastAPI backend ─────────────────────────────────────────────────────────
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Override Qdrant URL to use the local container, not Qdrant Cloud
+      - QDRANT_URL=http://qdrant:6333
+      - QDRANT_API_KEY=
+    volumes:
+      # Mount data directory so BM25 index and raw files persist between restarts
+      - ./data:/app/data
+    depends_on:
+      - qdrant
+    # Reload on code changes during development
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  qdrant_data:

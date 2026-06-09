@@ -1,0 +1,101 @@
+ticker,company_name,cik
+NVDA,NVIDIA Corporation,1045810
+AAPL,Apple Inc.,320193
+MSFT,Microsoft Corporation,789019
+AMZN,Amazon.com Inc.,1018724
+GOOGL,Alphabet Inc.,1652044
+META,Meta Platforms Inc.,1326801
+TSLA,Tesla Inc.,1318605
+AVGO,Broadcom Inc.,1730168
+LLY,Eli Lilly and Company,59478
+JPM,JPMorgan Chase & Co.,19617
+V,Visa Inc.,1403161
+MA,Mastercard Incorporated,1141391
+UNH,UnitedHealth Group Incorporated,731766
+XOM,Exxon Mobil Corporation,34088
+COST,Costco Wholesale Corporation,909832
+WMT,Walmart Inc.,104169
+HD,The Home Depot Inc.,354950
+NFLX,Netflix Inc.,1065280
+JNJ,Johnson & Johnson,200406
+BAC,Bank of America Corporation,70858
+PG,Procter & Gamble Company,80424
+ORCL,Oracle Corporation,1341439
+AMD,Advanced Micro Devices Inc.,2488
+CRM,Salesforce Inc.,1108524
+ABBV,AbbVie Inc.,1551152
+CVX,Chevron Corporation,93410
+KO,The Coca-Cola Company,21344
+MRK,Merck & Co. Inc.,310158
+PEP,PepsiCo Inc.,77476
+ACN,Accenture plc,1467373
+ADBE,Adobe Inc.,796343
+TMO,Thermo Fisher Scientific Inc.,97745
+CSCO,Cisco Systems Inc.,858877
+NOW,ServiceNow Inc.,1373715
+GS,The Goldman Sachs Group Inc.,886982
+CAT,Caterpillar Inc.,18230
+TXN,Texas Instruments Incorporated,97476
+INTU,Intuit Inc.,896878
+PM,Philip Morris International Inc.,1413329
+SPGI,S&P Global Inc.,64040
+AMAT,Applied Materials Inc.,6951
+IBM,International Business Machines Corporation,51143
+BKNG,Booking Holdings Inc.,1075531
+AXP,American Express Company,4962
+NEE,NextEra Energy Inc.,753308
+RTX,RTX Corporation,101829
+ISRG,Intuitive Surgical Inc.,1035267
+LOW,Lowes Companies Inc.,60667
+T,AT&T Inc.,732717
+BRK-B,Berkshire Hathaway Inc.,1067983
+PLD,Prologis Inc.,1045609
+LIN,Linde plc,1707925
+SO,Southern Company,92122
+LMT,Lockheed Martin Corporation,936468
+MDT,Medtronic plc,1613103
+COP,ConocoPhillips,1163165
+WFC,Wells Fargo & Company,72971
+MCD,McDonalds Corporation,63908
+UNP,Union Pacific Corporation,100885
+QCOM,QUALCOMM Incorporated,804328
+PFE,Pfizer Inc.,78003
+BMY,Bristol-Myers Squibb Company,14272
+AMGN,Amgen Inc.,318154
+GILD,Gilead Sciences Inc.,882095
+CVS,CVS Health Corporation,64803
+HCA,HCA Healthcare Inc.,860730
+DHR,Danaher Corporation,313616
+HUM,Humana Inc.,49071
+ZTS,Zoetis Inc.,1555280
+NKE,Nike Inc.,320187
+SBUX,Starbucks Corporation,829224
+TGT,Target Corporation,27419
+F,Ford Motor Company,37996
+GM,General Motors Company,1467858
+DG,Dollar General Corporation,29534
+YUM,Yum Brands Inc.,1041061
+MDLZ,Mondelez International Inc.,1103982
+CL,Colgate-Palmolive Company,21665
+HON,Honeywell International Inc.,773840
+GE,GE Aerospace,40545
+BA,The Boeing Company,12927
+DE,Deere & Company,315189
+UPS,United Parcel Service Inc.,1090727
+FDX,FedEx Corporation,1048911
+ETN,Eaton Corporation plc,1551182
+WM,Waste Management Inc.,823768
+MS,Morgan Stanley,895421
+BLK,BlackRock Inc.,2012383
+SCHW,Charles Schwab Corporation,316709
+COF,Capital One Financial Corporation,927628
+USB,U.S. Bancorp,36104
+MCO,Moodys Corporation,1059556
+CME,CME Group Inc.,1156375
+PANW,Palo Alto Networks Inc.,1327567
+CRWD,CrowdStrike Holdings Inc.,1535527
+FTNT,Fortinet Inc.,1262039
+SNOW,Snowflake Inc.,1640147
+DDOG,Datadog Inc.,1561550
+PYPL,PayPal Holdings Inc.,1633917
+SHW,Sherwin-Williams Company,89800

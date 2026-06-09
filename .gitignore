@@ -1,0 +1,40 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# BM25 index pickles (built at startup from Qdrant)
+data/bm25_index.pkl
+data/bm25_chunks.pkl
+
+# Raw EDGAR filing data (downloaded by ingest.py, not needed in repo)
+data/raw/
+
+# Ingestion checkpoint (local run state)
+data/checkpoints/
+
+# Benchmark results (generated data, not source)
+data/benchmark_results/
+
+# Logs
+logs/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp

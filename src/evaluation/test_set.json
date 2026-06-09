@@ -1,0 +1,247 @@
+{
+  "version": "1.0",
+  "description": "Evaluation test set — 30 questions across 10 companies and 5 categories.",
+  "note": "Verify ground_truth answers against the actual indexed 10-K filings before running evaluation.",
+  "questions": [
+    {
+      "id": "q001",
+      "question": "What does Apple identify as its primary products and services in its 10-K?",
+      "ground_truth": "Apple's primary products include iPhone, Mac, iPad, and wearables. Its services segment includes the App Store, Apple Music, iCloud, Apple TV+, and Apple Pay.",
+      "expected_tickers": ["AAPL"],
+      "expected_sections": ["risk_factors", "mda"],
+      "category": "factual"
+    },
+    {
+      "id": "q002",
+      "question": "What cybersecurity risks does Apple disclose in its Risk Factors?",
+      "ground_truth": "Apple identifies risks including unauthorized access to user data, vulnerabilities in third-party components, potential system breaches affecting the App Store and iCloud, and increasing regulatory requirements around data privacy.",
+      "expected_tickers": ["AAPL"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q003",
+      "question": "What are the main risks Microsoft identifies related to competition?",
+      "ground_truth": "Microsoft identifies competition from established players in cloud (AWS, Google Cloud), search (Google), gaming (Sony, Nintendo), and productivity software. It notes risks of losing market share if competitors offer better integrated experiences or lower prices.",
+      "expected_tickers": ["MSFT"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q004",
+      "question": "How does Microsoft describe its Azure cloud business performance in its MD&A?",
+      "ground_truth": "Microsoft's MD&A describes Azure as a key growth driver in the Intelligent Cloud segment, with revenue growth driven by increased usage and demand for cloud services, AI capabilities, and enterprise digital transformation.",
+      "expected_tickers": ["MSFT"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q005",
+      "question": "What supply chain risks does NVIDIA disclose?",
+      "ground_truth": "NVIDIA discloses risks including dependence on third-party foundries (primarily TSMC) for chip manufacturing, limited alternative suppliers, geopolitical risks around Taiwan-based manufacturing, and long lead times for capacity expansion.",
+      "expected_tickers": ["NVDA"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q006",
+      "question": "What does NVIDIA say about the risks of its data center business concentration?",
+      "ground_truth": "NVIDIA notes that a significant portion of its revenue is concentrated in data center customers, and that demand can be volatile and dependent on hyperscaler capital expenditure cycles.",
+      "expected_tickers": ["NVDA"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q007",
+      "question": "What regulatory risks does JPMorgan Chase identify in its Risk Factors?",
+      "ground_truth": "JPMorgan identifies regulatory risks including Basel III capital requirements, stress testing requirements, consumer protection regulations, anti-money laundering requirements, and potential new regulations following banking industry stress events.",
+      "expected_tickers": ["JPM"],
+      "expected_sections": ["risk_factors"],
+      "category": "regulatory"
+    },
+    {
+      "id": "q008",
+      "question": "How does JPMorgan Chase describe its net interest income performance?",
+      "ground_truth": "JPMorgan's MD&A describes net interest income as benefiting from higher interest rates, with growth in the Consumer & Community Banking segment. It notes sensitivity to interest rate changes and potential headwinds if rates decline.",
+      "expected_tickers": ["JPM"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q009",
+      "question": "What risks does Tesla identify related to its manufacturing operations?",
+      "ground_truth": "Tesla identifies risks including production ramp challenges at new factories, dependency on key suppliers for battery cells and semiconductors, quality control issues at scale, and potential disruptions from the concentrated nature of its manufacturing footprint.",
+      "expected_tickers": ["TSLA"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q010",
+      "question": "How does Tesla describe its competitive position in the EV market in its MD&A?",
+      "ground_truth": "Tesla's MD&A discusses increasing competition from legacy automakers entering the EV market and emerging EV-native competitors, and describes its strategy of scaling production and reducing costs to maintain competitive pricing.",
+      "expected_tickers": ["TSLA"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q011",
+      "question": "What are Google's (Alphabet) main sources of revenue as described in its MD&A?",
+      "ground_truth": "Alphabet's MD&A describes Google Services (primarily Google Search advertising and YouTube ads) as the dominant revenue source, with Google Cloud as the fastest-growing segment.",
+      "expected_tickers": ["GOOGL"],
+      "expected_sections": ["mda"],
+      "category": "factual"
+    },
+    {
+      "id": "q012",
+      "question": "What regulatory and legal risks does Alphabet disclose related to antitrust?",
+      "ground_truth": "Alphabet discloses ongoing antitrust investigations and lawsuits by the DOJ and state attorneys general regarding its search and advertising businesses, potential fines, and requirements to change business practices.",
+      "expected_tickers": ["GOOGL"],
+      "expected_sections": ["risk_factors"],
+      "category": "regulatory"
+    },
+    {
+      "id": "q013",
+      "question": "What does Amazon identify as its key risk factors related to competition?",
+      "ground_truth": "Amazon identifies competition across multiple business lines: retail (Walmart, Target), cloud (Microsoft Azure, Google Cloud), advertising, and logistics. It notes that its competitors may have greater resources in specific verticals.",
+      "expected_tickers": ["AMZN"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q014",
+      "question": "How does Amazon describe the performance of AWS in its MD&A?",
+      "ground_truth": "Amazon's MD&A describes AWS as a significant and growing contributor to operating income, driven by increasing adoption of cloud services and generative AI workloads.",
+      "expected_tickers": ["AMZN"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q015",
+      "question": "What does Meta identify as its primary risk related to user privacy and data regulations?",
+      "ground_truth": "Meta identifies GDPR in Europe and state-level privacy laws in the US as significant risks. It discloses ongoing regulatory inquiries and fines, and notes that privacy regulations could restrict its ability to use data for targeted advertising.",
+      "expected_tickers": ["META"],
+      "expected_sections": ["risk_factors"],
+      "category": "regulatory"
+    },
+    {
+      "id": "q016",
+      "question": "How does Meta describe its advertising revenue trends in its MD&A?",
+      "ground_truth": "Meta's MD&A describes advertising revenue recovery driven by increased advertiser demand, improvements in ad targeting efficiency (Advantage+ AI tools), and growth in Reels monetization.",
+      "expected_tickers": ["META"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q017",
+      "question": "What product liability and safety risks does Johnson & Johnson disclose?",
+      "ground_truth": "Johnson & Johnson discloses risks including litigation related to its pharmaceutical and medical device products, talc-related lawsuits, and the ongoing challenges of managing liability from its consumer health segment.",
+      "expected_tickers": ["JNJ"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q018",
+      "question": "How does Johnson & Johnson describe its pharmaceutical segment performance?",
+      "ground_truth": "JNJ's MD&A describes the pharmaceutical segment (now operating as Janssen) as a key growth driver, with performance driven by oncology products and immunology drugs, partially offset by patent cliffs on key products.",
+      "expected_tickers": ["JNJ"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q019",
+      "question": "What risks does Exxon Mobil identify related to climate change and energy transition?",
+      "ground_truth": "Exxon discloses risks from increasing regulatory requirements for emissions reductions, potential carbon taxes, lower long-term demand for fossil fuels as energy transition accelerates, and stranded asset risks.",
+      "expected_tickers": ["XOM"],
+      "expected_sections": ["risk_factors"],
+      "category": "regulatory"
+    },
+    {
+      "id": "q020",
+      "question": "How does Exxon Mobil describe its capital allocation strategy in its MD&A?",
+      "ground_truth": "Exxon's MD&A describes capital allocation focused on high-return upstream projects, the Permian Basin as a key growth area, investments in lower-emission technologies, and returning cash to shareholders through dividends and buybacks.",
+      "expected_tickers": ["XOM"],
+      "expected_sections": ["mda"],
+      "category": "financial"
+    },
+    {
+      "id": "q021",
+      "question": "Which companies in the S&P 500 pilot set identify supply chain disruption as a top risk?",
+      "ground_truth": "NVIDIA (dependence on TSMC), Tesla (semiconductor and battery supply chain), Amazon (logistics and third-party seller supply chains), and Apple (concentrated manufacturing in China) all identify supply chain risks prominently in their Risk Factors.",
+      "expected_tickers": ["NVDA", "TSLA", "AMZN", "AAPL"],
+      "expected_sections": ["risk_factors"],
+      "category": "comparative"
+    },
+    {
+      "id": "q022",
+      "question": "Which companies in the pilot set face the highest exposure to AI-related regulatory risk?",
+      "ground_truth": "Alphabet (AI in search and ads), Meta (AI in content moderation and advertising), and Microsoft (OpenAI partnership, Azure AI services) all identify emerging AI regulatory risk. Tesla also mentions autonomous driving regulatory uncertainty.",
+      "expected_tickers": ["GOOGL", "META", "MSFT", "TSLA"],
+      "expected_sections": ["risk_factors"],
+      "category": "comparative"
+    },
+    {
+      "id": "q023",
+      "question": "What does Apple say about its exposure to geopolitical risks related to China?",
+      "ground_truth": "Apple discloses significant revenue exposure to China as both a market and a manufacturing hub. It identifies risks from US-China trade tensions, potential tariffs, and risks of supply chain disruption if manufacturing must be relocated.",
+      "expected_tickers": ["AAPL"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q024",
+      "question": "What does Microsoft say about the risks of its dependence on third-party AI models?",
+      "ground_truth": "Microsoft discloses its investment in and partnership with OpenAI and notes risks including the pace of AI model development, potential for the models to produce harmful content (hallucinations), and regulatory uncertainty around AI.",
+      "expected_tickers": ["MSFT"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q025",
+      "question": "How does NVIDIA describe the risks related to export controls on its chips?",
+      "ground_truth": "NVIDIA discloses that US export controls restrict the sale of its highest-performance AI chips (H100 and successors) to China and certain other countries. It identifies revenue impact from these restrictions and uncertainty about future export control policy.",
+      "expected_tickers": ["NVDA"],
+      "expected_sections": ["risk_factors"],
+      "category": "regulatory"
+    },
+    {
+      "id": "q026",
+      "question": "What does JPMorgan identify as its risks related to interest rate sensitivity?",
+      "ground_truth": "JPMorgan identifies both rising and falling interest rate scenarios as risks. Higher rates increase net interest income but can also increase credit losses. Declining rates compress net interest margins. It discusses its asset-liability management approach.",
+      "expected_tickers": ["JPM"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q027",
+      "question": "What does Tesla say about the risks of Elon Musk's other roles and commitments?",
+      "ground_truth": "Tesla's Risk Factors identify that Elon Musk serves as CEO but also leads SpaceX and other ventures. The filing notes that his time and attention may be divided and that his departure or distraction could adversely affect the company.",
+      "expected_tickers": ["TSLA"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q028",
+      "question": "What does Amazon say about its risks related to fulfillment and logistics costs?",
+      "ground_truth": "Amazon identifies fulfillment costs as a significant operating expense that has grown as it expanded its logistics network. It notes risks from labor cost increases, fuel costs, and challenges in achieving efficiency at scale.",
+      "expected_tickers": ["AMZN"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q029",
+      "question": "How does Meta describe the risks to its advertising business from Apple's iOS privacy changes?",
+      "ground_truth": "Meta identifies Apple's App Tracking Transparency (ATT) framework as a significant headwind to its advertising business, as it limits the ability to track user behavior across apps, reducing the effectiveness of targeted ads.",
+      "expected_tickers": ["META"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    },
+    {
+      "id": "q030",
+      "question": "What does Exxon Mobil say about the risks of commodity price volatility?",
+      "ground_truth": "Exxon identifies oil and gas price volatility as a fundamental risk, noting that prices are determined by global supply and demand dynamics beyond its control. It discusses hedging and capital discipline strategies to manage cash flow through price cycles.",
+      "expected_tickers": ["XOM"],
+      "expected_sections": ["risk_factors"],
+      "category": "risk"
+    }
+  ]
+}

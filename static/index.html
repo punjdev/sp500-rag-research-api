@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S&P 500 10-K Research</title>
+  <style>
+    body { max-width: 700px; margin: 40px auto; padding: 0 16px; font-family: monospace; }
+    textarea { width: 100%; height: 80px; display: block; margin-bottom: 8px; }
+    #response { white-space: pre-wrap; margin-top: 16px; }
+    #citations { margin-top: 12px; }
+    #status { margin-top: 8px; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<h1>S&P 500 10-K Research</h1>
+<p id="companies-line">Loading indexed companies...</p>
+
+<hr>
+
+<textarea id="input" placeholder="Ask about any S&P 500 company's annual filing..."></textarea>
+<button id="send-btn" onclick="send()">Send</button>
+<p id="status"></p>
+
+<hr id="result-hr" hidden>
+<div id="response"></div>
+<div id="citations"></div>
+
+<script>
+const API = 'http://localhost:8000';
+
+async function init() {
+  try {
+    const r = await fetch(`${API}/companies`);
+    const data = await r.json();
+    const tickers = data.companies.map(c => c.ticker).join(', ');
+    document.getElementById('companies-line').textContent =
+      `${data.companies.length} companies indexed: ${tickers}`;
+  } catch {
+    document.getElementById('companies-line').textContent = 'Could not load company list.';
+  }
+}
+
+document.getElementById('input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
+});
+
+async function send() {
+  const input = document.getElementById('input');
+  const query = input.value.trim();
+  if (!query) return;
+
+  const btn = document.getElementById('send-btn');
+  const status = document.getElementById('status');
+  btn.disabled = true;
+  status.textContent = 'Thinking...';
+  document.getElementById('response').textContent = '';
+  document.getElementById('citations').textContent = '';
+  document.getElementById('result-hr').hidden = true;
+
+  try {
+    const resp = await fetch(`${API}/query`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, stream: false }),
+    });
+
+    if (resp.status === 429) {
+      status.textContent = 'Rate limited — please wait a moment.';
+      return;
+    }
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      status.textContent = `Error: ${err.detail || resp.statusText}`;
+      return;
+    }
+
+    const data = await resp.json();
+    status.textContent = `Done (${Math.round(data.latency_ms)}ms)`;
+    document.getElementById('result-hr').hidden = false;
+    document.getElementById('response').textContent = data.answer;
+
+    if (data.citations && data.citations.length) {
+      const seen = new Set();
+      const lines = ['Sources:'];
+      data.citations.forEach(c => {
+        const key = `${c.ticker}|${c.section}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        const section = c.section === 'mda' ? 'MD&A' : 'Risk Factors';
+        lines.push(`  ${c.ticker} — ${section} (${c.filing_date?.slice(0,4) || ''})`);
+      });
+      document.getElementById('citations').textContent = lines.join('\n');
+    }
+
+  } catch {
+    status.textContent = 'Could not reach the server. Is it running?';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+init();
+</script>
+</body>
+</html>

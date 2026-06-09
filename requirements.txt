@@ -1,0 +1,47 @@
+# Core API framework
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+# pydantic: langchain-core requires >=2.7.4 on Python 3.12+
+pydantic>=2.7.4,<3.0.0
+pydantic-settings>=2.3.0,<3.0.0
+
+# Cohere SDK — embeddings, reranking, generation
+cohere>=5.5.8,<6.0.0
+
+# Vector database client
+qdrant-client>=1.9.1,<2.0.0
+
+# Sparse retrieval
+rank-bm25==0.2.2
+
+# HTML parsing for EDGAR filings
+beautifulsoup4>=4.12.3
+lxml>=5.2.2
+requests>=2.32.0
+
+# Token counting (same tokenizer family as GPT-4 / Cohere cl100k)
+tiktoken>=0.7.0
+
+# Evaluation framework
+# ragas + langchain have rapidly evolving version constraints; loosen to let pip resolve
+ragas>=0.1.21,<0.2.0
+datasets>=2.20.0
+
+# LangChain Cohere wrapper — used by RAGAS to configure Cohere as the judge LLM
+langchain-cohere>=0.1.9
+langchain>=0.2.6,<0.3.0
+
+# Observability
+langfuse>=2.36.0,<3.0.0
+
+# Rate limiting for FastAPI
+slowapi==0.1.9
+
+# Data handling
+pandas>=2.2.2
+
+# Progress bars for long ingestion runs
+tqdm>=4.66.0
+
+# Async HTTP (used by Qdrant client and Langfuse)
+httpx>=0.27.0,<1.0.0

@@ -1,0 +1,33 @@
+# Render deployment config
+# docs: https://render.com/docs/blueprint-spec
+#
+# Free tier notes:
+#   - Service sleeps after 15 min of inactivity; first request after sleep
+#     takes ~90s (30s spin-up + 60s BM25 rebuild from Qdrant).
+#   - 512 MB RAM — sufficient for 11k BM25 chunks + FastAPI process.
+#   - Uses Dockerfile so lxml C-extensions build correctly.
+
+services:
+  - type: web
+    name: sp500-rag-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    plan: free
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: COHERE_API_KEY
+        sync: false          # set in Render dashboard
+      - key: QDRANT_URL
+        sync: false          # set in Render dashboard
+      - key: QDRANT_API_KEY
+        sync: false          # set in Render dashboard
+      - key: LANGFUSE_PUBLIC_KEY
+        sync: false          # set in Render dashboard
+      - key: LANGFUSE_SECRET_KEY
+        sync: false          # set in Render dashboard
+      - key: LANGFUSE_HOST
+        value: https://us.cloud.langfuse.com
+      - key: CORS_ORIGINS_STR
+        value: https://devpunjabi.com,https://www.devpunjabi.com
