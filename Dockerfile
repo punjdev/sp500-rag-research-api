@@ -22,6 +22,6 @@ EXPOSE $PORT
 # Health check so the platform knows when the app is ready
 # Startup takes ~60s (BM25 rebuild from Qdrant) — allow 120s before failing
 HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
-  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:${PORT}/health')"
+  CMD ["/bin/sh", "-c", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:${PORT}/health')\""]
 
-CMD uvicorn src.api.main:app --host 0.0.0.0 --port $PORT
+CMD ["/bin/sh", "-c", "uvicorn src.api.main:app --host 0.0.0.0 --port $PORT"]
